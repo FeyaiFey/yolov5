@@ -11,12 +11,11 @@ def convert_pdf_to_image(pdf_path):
         # 如果有多页，返回最后一页转换的图像
         return images[-1]
 
-
 save_folder = r'D:\PythonProject\DataSets\invoice\images'
 pdf_folder = r'D:\PythonProject\DataSets\pdf'
 
 
-i = 1001  # 根据文件名来判断
+i = 3001  # 根据文件名来判断
 for filename in os.listdir(pdf_folder):
     file_path = os.path.join(pdf_folder, filename)
     image = convert_pdf_to_image(file_path)
@@ -24,3 +23,8 @@ for filename in os.listdir(pdf_folder):
     print(f"{filename}处理完成！")
     i += 1
 print("处理完毕！")
+
+# 转1张
+# pdf_path = r"C:\Users\admin\Desktop\b.pdf"
+# img = convert_pdf_to_image(pdf_path)
+# img.save(r'C:\Users\admin\Desktop\b.jpg')
